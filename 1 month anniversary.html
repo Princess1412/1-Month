@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1 Month Anniversary</title>
+  <style>
+    /* CSS styles for centering and sweet background */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-image: linear-gradient(to bottom, #ffcad4, #ffb6c1);
+      margin: 0;
+      padding: 20px;
+      font-family: "Cookie", cursive;
+      opacity: 0; /* Initially set opacity to 0 */
+      animation: fade-in 1s ease-in-out forwards; /* Apply fade-in animation */
+    }
+    
+    /* CSS styles for the pop-up */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #f8e0e5;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      opacity: 0; /* Initially set opacity to 0 */
+      animation: fade-in 1s ease-in-out forwards; /* Apply fade-in animation */
+    }
+    .popup h2 {
+      color: #ff527a;
+      font-size: 24px;
+    }
+
+    /* CSS styles for the modern button */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #ff527a;
+      color: white;
+      font-family: "Leckerli One", cursive;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      opacity: 0; /* Initially set opacity to 0 */
+      animation: fade-in 1s ease-in-out forwards; /* Apply fade-in animation */
+    }
+    .button:hover {
+      background-color: #ff73a1;
+    }
+
+    /* CSS styles for the close button */
+    .close-button {
+      display: inline-block;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #ff527a;
+      color: white;
+      font-family: "Leckerli One", cursive;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .close-button:hover {
+      background-color: #ff73a1;
+    }
+
+    /* CSS animation for fade-in effect */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    /* CSS animation for fade-out effect */
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <script>
+    // JavaScript code
+    window.onload = function() {
+      var body = document.body;
+      body.style.opacity = 1; // Set opacity to 1 after the page is loaded
+    }
+
+    // Function to display the pop-up
+    function showPopup() {
+      var popup = document.getElementById("popup");
+      popup.style.display = "block";
+      popup.style.opacity = 1; // Set opacity to 1 when the pop-up is displayed
+    }
+    
+    // Function to close the pop-up
+    function closePopup() {
+      var popup = document.getElementById("popup");
+      var closeButton = document.getElementById("closeButton");
+      closeButton.disabled = true; // Disable the close button
+      popup.style.animation = "fade-out 1s ease-in-out forwards"; // Apply fade-out animation
+      setTimeout(function() {
+        popup.style.display = "none";
+        closeButton.disabled = false; // Enable the close button after the delay
+      }, 1000); // Hide the pop-up after fade-out animation completes
+    }
+  </script>
+</head>
+<body>
+  <h1>💓 1 Month Anniversary 💓</h1>
+  <p id="anniversaryMessage"></p>
+  
+  <!-- Button to open the pop-up -->
+  <button class="button" onclick="showPopup()">Open this</button>
+  
+  <!-- Pop-up content -->
+  <div id="popup" class="popup" style="display: none;">
+    <h2>Happy 1 Month Anniversary! &#x1F493;</h2>
+    <p>You are the most amazing person in my life. Thank you for making the past month incredibly special. I cherish every moment spent with you. Here's to many more beautiful months together. &#x1F60A;</p>
+    <button id="closeButton" class="close-button" onclick="closePopup()">Close &#x1F495;</button>
+  </div>
+</body>
+</html>
